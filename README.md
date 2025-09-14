@@ -16,10 +16,15 @@ source .venv/bin/activate
 ### 2. Установка зависимостей
 ```bash
 python -m pip install --upgrade pip setuptools wheel
-python -m pip install pandas numpy
+python -m pip install pandas numpy requests
+export OPENAI_API_KEY="sk-..."
 ```
 
 ### 3. Запуск
 ```bash
-python push_generator.py --data-dir "case 1" --out output.csv
+python push_generator.py \
+  --data-dir "case 1" \
+  --out output.csv \
+  --llm openai \
+  --llm-model gpt-4o-mini
 ```
